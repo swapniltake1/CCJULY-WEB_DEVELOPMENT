@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    width: 70px;
+    cursor: pointer;
+}
+.navbar{
+    background-image: url( images/institute-of-engineering-and-technology.jpg);
+    width: 100hv;
+    height: 450px;
+    padding: 30px;
+    margin-right: 20px;
+    margin-left: 15px;
+
+}
+nav{
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    list-style-type: style none; 
+    margin: 10px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    border: groove;
+    padding: 1px 10px;
+    background-color: wheat;
+    border-radius: 20px;
+}
+nav ul li a:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+
+/*--------search bar---------*/
+
+#search-bar h1{
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border: 1px;
+    margin-bottom: 30px;
+    background-color: transparent;
+}
+#search-bar{
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#search-bar h1{
+    color: rgb(255, 255, 255); 
+    font-size: 50px;
+    margin: 30px;
+    
+}
+#search-bar input{
+    
+    padding: 5px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    /*background-color: transparent;          remove comment when searchbar in center*/
+
+}
+input {
+    background-color: white;
+    border-radius: 0.5;
+    font-size: 16px;
+    height: 100%;
+    outline: none;
+    padding-inline-end: 44px;
+    padding-inline-start: 52px;
+    position: relative;
+    width: 30%;
+
+}
+
+
+
+
+/*-----------testimonial----------*/
+
+.testimonial{
+    flex-basis: 30%;
+    padding-top: 100px;
+    display: inline-flexbox;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+
+}
+
+.testimonial .col-3{
+    text-align: center;
+    margin-top: 30px;
+    padding: 40px 40px;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.7);
+    cursor: pointer;
+    transition: transform 0.5s;
+    background-color: transparent;
+}
+
+.testimonial .col-3 img{
+    width: 200px;
+    margin-top: 20px;
+    
+
+    
+}
+.testimonial .col-3:hover{
+    transform: translateY(-10px);
+
+}
+
+
+.testimonial .col-3 h3{
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+
+/*---------footer--------------*/
+
+
+.footer{
+    background:black;
+    color: gray;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.container{
+    background-color: transparent;
+}
+.row{
+    display: flex;
+    background-color: transparent;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.footer p{
+    color: gray; 
+    background-color: transparent;  
+}
+.footer h2{
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2{
+    min-width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+
+ul{
+    list-style-type: none;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+
+
+.footer hr{
+    border: none;
+    background: gray;
+    height: 1px;
+    margin: 20px;
+}
+.copyright{
+    text-align: center;
+}
+
+
+
+
+
+
+
