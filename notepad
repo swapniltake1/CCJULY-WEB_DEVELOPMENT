@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+    <title> Notepad App By Swapnil </title>
+</head>
+
+<body>
+
+    <div id="note" contenteditable
+        style="border: 1px black solid; min-height: 250px; background: bisque;font-family: 'Chilanka', cursive;">
+    </div>
+
+    <br/><br/><br/>
+
+    <h4>Instant Save: ctrl + s </h4>
+
+
+    <script src="https://unpkg.com/filer/dist/filer.min.js"></script>
+    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+
+    <script>
+
+        const fs = new Filer.FileSystem();
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+            fs.readFile('/note', 'utf8', function (err, data) {
+                if (err|| data.length === 0) {
+                    document.querySelector("#note").innerText = "Welcome to my note app!";
+                }
+                if (data) {
+                    document.querySelector("#note").innerText = data;
+                }
+
+
+                /**
+                @param {Function} callback An optional callback function, this has a single boolean argument which indicates saving success
+                */
+                function saveNote(callback) {
+                    fs.writeFile('/note', document.querySelector('#note').innerText, (err) => {
+                        if (!err) console.log("Note saved!" + document.querySelector("#note").innerText);
+                        else console.log("Error: " + err);
+
+                        // Confirm callback is defined
+                        if (callback)
+                            callback(!err)
+                    });
+
+                }
+
+                setInterval(() => { saveNote() }, 2000);
+
+
+                // setting up hotkeys shortcut feature for instant saving the note
+                hotkeys.filter = function(event) {
+                    var tagName = (event.target || event.srcElement).tagName;
+                    return !(tagName.isContentEditable || tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA');
+                }
+
+                hotkeys('ctrl+s', function(event, handler) {
+                    event.preventDefault();
+                    saveNote(function(success) {
+                        if (success) alert('Saved!');
+                        else alert('Message failed to be saved!');
+                    });
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>
